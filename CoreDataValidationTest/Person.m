@@ -54,8 +54,8 @@
 - (BOOL)validateLastName:(id *)ioValue error:(NSError **)outError {
     
     // lastName's validation is specified in the Core Data model.
-    // This method is implemented just to inspection of outError.
-    // It seems no error is provided at this point, even when lastName is invalid.
+    // This method is implemented minimally just to allow inspection of ioValue and outError.
+    // It seems no error object is provided at this point, even when lastName is invalid.
     
     NSLog(@"[<%@ %p> %@ line= %d] *ioValue= %@", [self class], self, NSStringFromSelector(_cmd), __LINE__, *ioValue);
     NSLog(@"[<%@ %p> %@ line= %d] *outError= %@", [self class], self, NSStringFromSelector(_cmd), __LINE__, *outError);
