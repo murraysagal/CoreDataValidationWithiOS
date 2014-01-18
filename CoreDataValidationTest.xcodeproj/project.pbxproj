@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		722C2BFC188A6146001A0565 /* SSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 722C2BFA188A6146001A0565 /* SSViewController.m */; };
+		722C2BFD188A6146001A0565 /* SSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 722C2BFB188A6146001A0565 /* SSViewController.xib */; };
+		725D7FC3188A6AD300243B54 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 725D7FC2188A6AD300243B54 /* Person.m */; };
 		72BEF6A0185BAA76000FA0CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72BEF69F185BAA76000FA0CB /* Foundation.framework */; };
 		72BEF6A2185BAA76000FA0CB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72BEF6A1185BAA76000FA0CB /* CoreGraphics.framework */; };
 		72BEF6A4185BAA76000FA0CB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72BEF6A3185BAA76000FA0CB /* UIKit.framework */; };
@@ -14,10 +17,7 @@
 		72BEF6AC185BAA76000FA0CB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72BEF6AA185BAA76000FA0CB /* InfoPlist.strings */; };
 		72BEF6AE185BAA76000FA0CB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 72BEF6AD185BAA76000FA0CB /* main.m */; };
 		72BEF6B2185BAA76000FA0CB /* SSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 72BEF6B1185BAA76000FA0CB /* SSAppDelegate.m */; };
-		72BEF6B5185BAA76000FA0CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72BEF6B3185BAA76000FA0CB /* Main.storyboard */; };
 		72BEF6B8185BAA77000FA0CB /* CoreDataValidationTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 72BEF6B6185BAA77000FA0CB /* CoreDataValidationTest.xcdatamodeld */; };
-		72BEF6BB185BAA77000FA0CB /* SSMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72BEF6BA185BAA77000FA0CB /* SSMasterViewController.m */; };
-		72BEF6BE185BAA77000FA0CB /* SSDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72BEF6BD185BAA77000FA0CB /* SSDetailViewController.m */; };
 		72BEF6C0185BAA77000FA0CB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72BEF6BF185BAA77000FA0CB /* Images.xcassets */; };
 		72BEF6C7185BAA77000FA0CB /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72BEF6C6185BAA77000FA0CB /* XCTest.framework */; };
 		72BEF6C8185BAA77000FA0CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72BEF69F185BAA76000FA0CB /* Foundation.framework */; };
@@ -38,6 +38,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		722C2BF9188A6146001A0565 /* SSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSViewController.h; sourceTree = "<group>"; };
+		722C2BFA188A6146001A0565 /* SSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSViewController.m; sourceTree = "<group>"; };
+		722C2BFB188A6146001A0565 /* SSViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SSViewController.xib; sourceTree = "<group>"; };
+		725D7FC1188A6AD300243B54 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		725D7FC2188A6AD300243B54 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		72BEF69C185BAA76000FA0CB /* CoreDataValidationTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataValidationTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72BEF69F185BAA76000FA0CB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		72BEF6A1185BAA76000FA0CB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -49,12 +54,7 @@
 		72BEF6AF185BAA76000FA0CB /* CoreDataValidationTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CoreDataValidationTest-Prefix.pch"; sourceTree = "<group>"; };
 		72BEF6B0185BAA76000FA0CB /* SSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSAppDelegate.h; sourceTree = "<group>"; };
 		72BEF6B1185BAA76000FA0CB /* SSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSAppDelegate.m; sourceTree = "<group>"; };
-		72BEF6B4185BAA76000FA0CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		72BEF6B7185BAA77000FA0CB /* CoreDataValidationTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataValidationTest.xcdatamodel; sourceTree = "<group>"; };
-		72BEF6B9185BAA77000FA0CB /* SSMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSMasterViewController.h; sourceTree = "<group>"; };
-		72BEF6BA185BAA77000FA0CB /* SSMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSMasterViewController.m; sourceTree = "<group>"; };
-		72BEF6BC185BAA77000FA0CB /* SSDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSDetailViewController.h; sourceTree = "<group>"; };
-		72BEF6BD185BAA77000FA0CB /* SSDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSDetailViewController.m; sourceTree = "<group>"; };
 		72BEF6BF185BAA77000FA0CB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		72BEF6C5185BAA77000FA0CB /* CoreDataValidationTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreDataValidationTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		72BEF6C6185BAA77000FA0CB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -123,13 +123,13 @@
 		72BEF6A7185BAA76000FA0CB /* CoreDataValidationTest */ = {
 			isa = PBXGroup;
 			children = (
+				725D7FC1188A6AD300243B54 /* Person.h */,
+				725D7FC2188A6AD300243B54 /* Person.m */,
+				722C2BF9188A6146001A0565 /* SSViewController.h */,
+				722C2BFA188A6146001A0565 /* SSViewController.m */,
+				722C2BFB188A6146001A0565 /* SSViewController.xib */,
 				72BEF6B0185BAA76000FA0CB /* SSAppDelegate.h */,
 				72BEF6B1185BAA76000FA0CB /* SSAppDelegate.m */,
-				72BEF6B3185BAA76000FA0CB /* Main.storyboard */,
-				72BEF6B9185BAA77000FA0CB /* SSMasterViewController.h */,
-				72BEF6BA185BAA77000FA0CB /* SSMasterViewController.m */,
-				72BEF6BC185BAA77000FA0CB /* SSDetailViewController.h */,
-				72BEF6BD185BAA77000FA0CB /* SSDetailViewController.m */,
 				72BEF6BF185BAA77000FA0CB /* Images.xcassets */,
 				72BEF6B6185BAA77000FA0CB /* CoreDataValidationTest.xcdatamodeld */,
 				72BEF6A8185BAA76000FA0CB /* Supporting Files */,
@@ -245,7 +245,7 @@
 			files = (
 				72BEF6C0185BAA77000FA0CB /* Images.xcassets in Resources */,
 				72BEF6AC185BAA76000FA0CB /* InfoPlist.strings in Resources */,
-				72BEF6B5185BAA76000FA0CB /* Main.storyboard in Resources */,
+				722C2BFD188A6146001A0565 /* SSViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,9 +264,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72BEF6BB185BAA77000FA0CB /* SSMasterViewController.m in Sources */,
+				725D7FC3188A6AD300243B54 /* Person.m in Sources */,
 				72BEF6B2185BAA76000FA0CB /* SSAppDelegate.m in Sources */,
-				72BEF6BE185BAA77000FA0CB /* SSDetailViewController.m in Sources */,
+				722C2BFC188A6146001A0565 /* SSViewController.m in Sources */,
 				72BEF6B8185BAA77000FA0CB /* CoreDataValidationTest.xcdatamodeld in Sources */,
 				72BEF6AE185BAA76000FA0CB /* main.m in Sources */,
 			);
@@ -297,14 +297,6 @@
 				72BEF6AB185BAA76000FA0CB /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		72BEF6B3185BAA76000FA0CB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				72BEF6B4185BAA76000FA0CB /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		72BEF6D0185BAA77000FA0CB /* InfoPlist.strings */ = {
@@ -477,6 +469,7 @@
 				72BEF6D9185BAA77000FA0CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		72BEF6DA185BAA77000FA0CB /* Build configuration list for PBXNativeTarget "CoreDataValidationTestTests" */ = {
 			isa = XCConfigurationList;
@@ -485,6 +478,7 @@
 				72BEF6DC185BAA77000FA0CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
