@@ -26,10 +26,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
     
     self.person = (Person *)[NSEntityDescription insertNewObjectForEntityForName:@"Person" inManagedObjectContext:self.moc];
-    
 }
 
 - (IBAction)validateFirstName:(id)sender {
@@ -45,13 +43,13 @@
         NSString *errorMessage = [error localizedDescription];
         [[[UIAlertView alloc] initWithTitle:@"Oops" message:errorMessage delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
     }
-    
 }
 
 - (IBAction)validateLastName:(id)sender {
     
     // lastName's validation is set in the Core Data model.
-    // validateLastName:error: is not implemented. See the console for the error messages returned by Core Data.
+    // validateLastName:error: is not implemented.
+    // See the console for the error messages returned by Core Data.
     
     NSString *lastName = self.lastNameField.text;
     NSError *error;
@@ -76,6 +74,6 @@
         
         [[[UIAlertView alloc] initWithTitle:@"Oops" message:errorMessage delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
     }
-
 }
+
 @end

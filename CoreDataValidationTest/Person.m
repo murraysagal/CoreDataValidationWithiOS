@@ -18,7 +18,7 @@
 - (BOOL)validateFirstName:(id *)ioValue error:(NSError **)outError
 {
     // firstName has no validation set in the model editor, it's all managed here.
-    // constraints imposed here, field width: min 2, max 10
+    // field width: min 2, max 10
     
     BOOL isValid = YES;
     NSString *firstName = *ioValue;
@@ -27,15 +27,17 @@
     NSInteger code;
     
     if (firstName.length < 2) {
+        
         errorMessage = @"First Name must be at least 2 characters.";
         code = NSValidationStringTooShortError;
         isValid = NO;
-    }
-    
-    if (firstName.length > 10) {
+        
+    } else if (firstName.length > 10) {
+        
         errorMessage = @"First Name can't be more than 10 characters.";
         code = NSValidationStringTooLongError;
         isValid = NO;
+        
     }
     
     if (outError && errorMessage) {
@@ -47,10 +49,7 @@
     }
     
     return isValid;
-}
-
-- (NSString *)description {
-    return [NSString stringWithFormat:@"<%p> firstName= %@; lastName= %@", self, self.firstName, self.lastName];
+    
 }
 
 @end
