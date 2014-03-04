@@ -64,6 +64,8 @@
         
         NSString *errorMessage;
         
+        // In this case, this switch is required to provide a consumable error message. If lastName
+        // is validated elsewhere, this switch needs to be duplicated or implmented in a non-KVC-way. 
         switch (error.code) {
             case NSValidationStringTooShortError:
                 errorMessage = @"Last Name must be at least 2 characters.";

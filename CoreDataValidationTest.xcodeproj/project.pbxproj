@@ -41,6 +41,7 @@
 		722C2BF9188A6146001A0565 /* SSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSViewController.h; sourceTree = "<group>"; };
 		722C2BFA188A6146001A0565 /* SSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSViewController.m; sourceTree = "<group>"; };
 		722C2BFB188A6146001A0565 /* SSViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SSViewController.xib; sourceTree = "<group>"; };
+		72493D0518C5FEC300931DAE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; wrapsLines = 1; };
 		725D7FC1188A6AD300243B54 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		725D7FC2188A6AD300243B54 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		72BEF69C185BAA76000FA0CB /* CoreDataValidationTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataValidationTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +97,7 @@
 				72BEF6CD185BAA77000FA0CB /* CoreDataValidationTestTests */,
 				72BEF69E185BAA76000FA0CB /* Frameworks */,
 				72BEF69D185BAA76000FA0CB /* Products */,
+				72493D0518C5FEC300931DAE /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
