@@ -2,7 +2,7 @@
 
 This project demonstrates that on iOS the default Core Data validation error messages are not suitable for display to the user and that the only way to return directly consumable error messages *and* follow the standard KVC validation approach is to remove all validation for an NSManagedObject's properties from the Core Data model editor and implement validation using Core Data's `validate<key>:error:` method.
 
-The last section puts forward two possible enhancements to Core Data that could eliminate the problem. 
+The last section puts forward two possible enhancements to Core Data that could eliminate the problem.
 
 ## Scenario
 
@@ -75,17 +75,17 @@ So now `validateFirstName:error:` is partially implemented in `Person.m` like th
 
 But inside `validateFirstName:error:`, `outError` is still nil even when `firstName` is invalid. When control returns to the view controller there is an error like at the top of this question indicating that the Core Data validation runs *after* any `validate<key>:error:` implementations but, again, that's too late.
 
-## Possible Workaround
+## Workaround
 
 In the current implementation of Core Data I think there may be only one way to return a consumable error message *and* remain within KVC. 
 
-Remove all the validation from the Core Data model editor in Xcode and perform all of the validation in the `validate<key>:error:` methods like `validateFirstName:error:`. Based on the results, construct a consumable error message, create a new `NSError` object and return that to the view controller.
+- Remove all the validation from the Core Data model editor in Xcode and perform all of the validation in the `validate<key>:error:` methods like `validateFirstName:error:`. If validation fails create a new `NSError` object with a consumable error message and return that to the view controller.
 
 ## Strict KVC Use Case
 
 Simply put, I can't deviate from KVC because I'm creating an editing framework. Within the framework, all the view controller knows about the property being edited is the key, like `@"firstName"` and its model object, like `self.person`. Thus it can't do anything other than the standard KVC approach to validation.
 
-The workaround works fine. But users of the framework who are already using Core Data probably have constraints specified in the model and adding my framework would mean moving all of that to the validation method. 
+The workaround works fine when you're starting a new project. But users of the framework who are already using Core Data probably have constraints specified in the model and adding my framework would mean moving all of that to the validation method.
 
 # Suggestions for Enhancing Core Data
 
