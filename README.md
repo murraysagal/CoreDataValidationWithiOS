@@ -2,6 +2,8 @@
 
 This project demonstrates that on iOS the default Core Data validation error messages are not suitable for display to the user and that the only way to return directly consumable error messages *and* follow the standard KVC validation approach is to remove all validation for an NSManagedObject's properties from the Core Data model editor and implement validation using Core Data's `validate<key>:error:` method.
 
+The last section puts forward two possible enhancements to Core Data that could eliminate the problem. 
+
 ## Scenario
 
 A new Person object, an `NSManagedObject` subclass, is inserted into the MOC. The view controller displays a form for editing. Early (before save) validation is implemented using the standard KVC `validateValue:forKey:error:` method like this...
