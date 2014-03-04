@@ -83,7 +83,7 @@ In the current implementation of Core Data I think there may be only one way to 
 
 ## Strict KVC Use Case
 
-Simply put, I can't deviate from KVC because I'm creating an editing framework. Within the framework, all the view controller knows about the property being edited is the key, like `@"firstName"` and its model object, like `self.person`. Thus it can't do anything other than the standard KVC approach to validation.
+In my case I can't deviate from KVC because I'm creating an editing framework. Within the framework, all the view controller knows about the property being edited is the key, like `@"firstName"` and its model object, like `self.person`. Thus it can't do anything other than the standard KVC approach to validation.
 
 The workaround works fine when you're starting a new project. But users of the framework who are already using Core Data probably have constraints specified in the model and adding my framework would mean moving all of that to the validation method.
 
