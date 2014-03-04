@@ -87,8 +87,8 @@ The workaround works fine. But users of the framework who are already using Core
 
 # Suggestions for Enhancing Core Data
 
-I have two suggestions for enhancing Core Data on iOS that would, I think, alleviate this problem altogether. 
+I have two suggestions for enhancing Core Data on iOS that would, I think, alleviate this problem altogether. I prefer the first suggestion. 
 
 1. In the Xcode Core Data model editor allow the developer to specify the error message along with the constraint. Of course, these wouldn't be hardcoded strings but keys to a localized message. It should also support substitution of the constraint value so the strings wouldn't need to be changed if the value changed. "First name must be at least 2 characters." The 2 would be substituted. This way, in most cases, developers would not have to implement `validate<key>:error:` methods because Core Data would use the developer-provided error messages in the error object. 
 
-2. Have Core Data perform the validation for the constraints specified in the model before calling `validate<key>:error:`. If there is an error or errors pass along a filled in error object. Then the developer can inspect `outError` and create a new error object that contains a directly consumable error message and return that to the view controller. 
+2. Have Core Data perform the validation for the constraints specified in the model before calling `validate<key>:error:`. If there is an error or errors pass along a filled in error object. Then the developer can inspect `outError` and create a new error object that contains a directly consumable error message and return that to the view controller.
