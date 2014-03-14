@@ -1,0 +1,27 @@
+/* fwLocalizedStrings.strings
+  CoreDataValidationTest
+
+  Created by Olaf on 14.03.14.
+  Copyright (c) 2014 Murray Sagal. All rights reserved. */
+
+/* number is to big */
+"fw_val_NumberToBig" = "%1@ should be smaller than %2@";
+
+/* number is to small */
+"fw_val_NumberToSmall" = "%1@ should be bigger than %2@";
+
+/* <key> can't be more than <expectedLimit> characters */
+"fw_val_StringCantBeMore" = "%1@ can't be more than %2@ characters";
+
+/* <key> must be at least <expectedLimit> characters */
+"fw_val_StringMustBeAtLeast" = "%1@ must be at least %2@ characters";
+
+/* expected a number here */
+"fw_val_expectedNSNumber" = "Please enter a number";
+
+/* expected a string here */
+"fw_val_expectedNSString" = "Please enter a string";
+
+/* did not expected a nil value */
+"fw_val_expectedNoNil" = "Please enter a value";
+
