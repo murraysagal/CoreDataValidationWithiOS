@@ -35,8 +35,11 @@
 
 - (IBAction)validateFirstName:(id)sender {
     
-    // firstName's validation is not specified in the model editor, it's specified in validateFirstName:error:.
-    // All the validation is managed in validateFirstName:error: so meaningful error messages can be returned.
+    // firstName's validation is not specified in the model editor, rather it's implemented in validateFirstName:error: in the Person class.
+    // All the validation is managed in validateFirstName:error: and this allows a directly consumable error message to be returned.
+    
+    // Note: the validation process is kicked-off by calling validateValue:forKey:error:. Core Data takes care of calling the
+    // validate<key>:error: method. Don't call your validate<key>:error: methods directly.
     
     NSString *firstName = self.firstNameField.text;
     NSError *error;
@@ -60,12 +63,13 @@
     
     if (!isValid) {
         
-        NSLog(@"[<%@ %p> %@ line= %d] code= %i, desc= %@", [self class], self, NSStringFromSelector(_cmd), __LINE__, error.code, error.localizedDescription);
+        NSLog(@"[<%@ %p> %@ line= %d] code= %li, desc= %@", [self class], self, NSStringFromSelector(_cmd), __LINE__, (long)error.code, error.localizedDescription);
         
         NSString *errorMessage;
         
-        // In this case, this switch is required to provide a consumable error message. If lastName
-        // is validated elsewhere, this switch needs to be duplicated or implmented in a non-KVC-way. 
+        // In this case, this switch is required to provide a consumable error message.
+        // This is trivial to implement and is fine in many cases but not if you need to
+        // strictly adhere to KVC.
         switch (error.code) {
             case NSValidationStringTooShortError:
                 errorMessage = @"Last Name must be at least 2 characters.";
@@ -78,11 +82,7 @@
         }
         
         if (errorMessage) {
-            [[[UIAlertView alloc] initWithTitle:@"Oops"
-                                        message:errorMessage
-                                       delegate:nil
-                              cancelButtonTitle:@"Ok"
-                              otherButtonTitles:nil] show];
+            [[[UIAlertView alloc] initWithTitle:@"Oops" message:errorMessage delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
         }
     }
 }
