@@ -1,8 +1,10 @@
 ## Description
 
-This project demonstrates that on iOS the default Core Data validation error messages are not suitable for display to the user and that the only way to return directly consumable error messages *and* follow the standard KVC validation approach is to remove all validation for an NSManagedObject's properties from the Core Data model editor and implement validation using Core Data's `validate<key>:error:` method.
+This project demonstrates that Core Data validation (and I'm talking about pre-save validation) can be implemented on iOS with very little effort and that it works well with one caveat. The problem is that, by default, the error messages returned are not directly consumable. If you are willing to deviate from a KVC compliant approach this problem is easy to work around, and is shown below. If you must adhere to KVC this can be done too with a little extra code.
 
-The last section puts forward two possible enhancements to Core Data that could eliminate the problem.
+All the details are below but here's the summary. If you must remain KVC compliant the only way to get a consumable error message to the view controller is to remove the validation for an NSManagedObject's properties from the Core Data model editor and implement validation using Core Data's `validate<key>:error:` method.
+
+The last section puts forward two possible enhancements to Core Data that could eliminate the problem. I'm planning to create a radar for this issue but I'd love to get some feedback first.
 
 ## Scenario
 
@@ -11,7 +13,7 @@ A new Person object, an `NSManagedObject` subclass, is inserted into the MOC. Th
 ```Objective-C
 NSError *error;
 BOOL isValid = [person validateValue:&firstName forKey:@"firstName" error:&error];
-if (!isValid) { // handle the error here }
+if (!isValid) { /* handle the error here */ }
 ```
 
 Validation constraints, like min and max width, are set in Core Data's model editor in Xcode. 
@@ -56,13 +58,13 @@ if (!isValid) {
 
 But, however it's implemented, getting a consumable error message to the view controller requires the developer to deviate in some way from the standard KVC approach. This may be acceptable in some cases but assume for the moment that there is a use case that requires strict adherence to the standard KVC approach. 
 
-So, is there a way to return a directly consumable error message *and* adhere to KVC? 
+So, is there a way to return a directly consumable error message *and* adhere to KVC? In other words, how do we get away from requiring the switch statement or something like `localizedErrorMessageForKey:withCode:`?
 
 ## Adhering to KVC
 
 Looking at the Core Data docs for Property-Level Validation reveals this...
 
-> If you want to implement logic in addition to the constraints you provide in the managed object model, you should not override validateValue:forKey:error:. Instead you should implement methods of the form validate<Key>:error:. 
+> If you want to implement logic in addition to the constraints you provide in the managed object model, you should not override validateValue:forKey:error:. Instead you should implement methods of the form `validate<Key>:error:`. 
 
 So now `validateFirstName:error:` is partially implemented in `Person.m` like this allowing ioValue and `outError` to be inspected...
 
@@ -79,7 +81,45 @@ But inside `validateFirstName:error:`, `outError` is still nil even when `firstN
 
 In the current implementation of Core Data I think there may be only one way to return a consumable error message *and* remain within KVC. 
 
-- Remove all the validation from the Core Data model editor in Xcode and perform all of the validation in the `validate<key>:error:` methods like `validateFirstName:error:`. If validation fails create a new `NSError` object with a consumable error message and return that to the view controller.
+- Remove all the validation from the Core Data model editor in Xcode and perform all of the validation in the `validate<key>:error:` methods like `validateFirstName:error:`. If validation fails create a new `NSError` object with a consumable error message and return that to the view controller. Here's an example:
+
+```Objective-C
+- (BOOL)validateFirstName:(id *)ioValue error:(NSError **)outError {
+    
+    // firstName's validation is not specified in the model editor, it's specified here.
+    // field width: min 2, max 10
+    
+    BOOL isValid = YES;
+    NSString *firstName = *ioValue;
+    NSString *errorMessage;
+    NSInteger code;
+    
+    if (firstName.length < 2) {
+        
+        errorMessage = @"First Name must be at least 2 characters.";
+        code = NSValidationStringTooShortError;
+        isValid = NO;
+        
+    } else if (firstName.length > 10) {
+        
+        errorMessage = @"First Name can't be more than 10 characters.";
+        code = NSValidationStringTooLongError;
+        isValid = NO;
+        
+    }
+    
+    if (outError && errorMessage) {
+        NSDictionary *userInfo = @{ NSLocalizedDescriptionKey : errorMessage };
+        NSError *error = [[NSError alloc] initWithDomain:@"test"
+                                                    code:code
+                                                userInfo:userInfo];
+        *outError = error;
+    }
+    
+    return isValid;
+    
+}
+```
 
 ## Strict KVC Use Case
 
