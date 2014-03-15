@@ -25,6 +25,7 @@
 		72BEF6CA185BAA77000FA0CB /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72BEF6A5185BAA76000FA0CB /* CoreData.framework */; };
 		72BEF6D2185BAA77000FA0CB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72BEF6D0185BAA77000FA0CB /* InfoPlist.strings */; };
 		72BEF6D4185BAA77000FA0CB /* CoreDataValidationTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 72BEF6D3185BAA77000FA0CB /* CoreDataValidationTestTests.m */; };
+		EDF5ED4F18D37D4900CBA7DA /* fwLocalizedStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = EDF5ED4E18D37D4900CBA7DA /* fwLocalizedStrings.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		72BEF6CF185BAA77000FA0CB /* CoreDataValidationTestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoreDataValidationTestTests-Info.plist"; sourceTree = "<group>"; };
 		72BEF6D1185BAA77000FA0CB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		72BEF6D3185BAA77000FA0CB /* CoreDataValidationTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataValidationTestTests.m; sourceTree = "<group>"; };
+		EDF5ED4E18D37D4900CBA7DA /* fwLocalizedStrings.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = fwLocalizedStrings.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 		72BEF6A8185BAA76000FA0CB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EDF5ED4E18D37D4900CBA7DA /* fwLocalizedStrings.strings */,
 				72BEF6A9185BAA76000FA0CB /* CoreDataValidationTest-Info.plist */,
 				72BEF6AA185BAA76000FA0CB /* InfoPlist.strings */,
 				72BEF6AD185BAA76000FA0CB /* main.m */,
@@ -245,6 +248,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDF5ED4F18D37D4900CBA7DA /* fwLocalizedStrings.strings in Resources */,
 				72BEF6C0185BAA77000FA0CB /* Images.xcassets in Resources */,
 				72BEF6AC185BAA76000FA0CB /* InfoPlist.strings in Resources */,
 				722C2BFD188A6146001A0565 /* SSViewController.xib in Resources */,
