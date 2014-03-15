@@ -2,7 +2,7 @@
 
 This project demonstrates that Core Data validation (specifically pre-save validation) can be implemented on iOS with very little effort and that it works well with one caveat. The problem is that, by default, the error messages returned are not directly consumable. If you are willing to deviate from a KVC compliant approach this problem is easy to work around, and is shown below. If you must adhere to KVC this can be done too with a slightly unconventional approach (but still completely KVC compliant).
 
-All the details are below but here's the summary. If you must remain KVC compliant the only way to get a consumable error message to the view controller is to remove the validation for an NSManagedObject's properties from the Core Data model editor and implement validation using Core Data's `validate<key>:error:` method.
+All the details are below but here's the summary. If you must remain KVC compliant one way to get a consumable error message to the view controller is to remove the validation for an NSManagedObject's properties from the Core Data model editor and implement validation using Core Data's `validate<key>:error:` method.
 
 The last section puts forward two possible enhancements to Core Data that could eliminate the problem. I'm planning to create a radar for this issue but I'd love to get some feedback first.
 
@@ -79,7 +79,7 @@ But inside `validateFirstName:error:`, `outError` is still nil even when `firstN
 
 ## Workaround
 
-In the current implementation of Core Data I think there may be only one way to return a consumable error message *and* remain within KVC. 
+In the current implementation of Core Data here is one way to return a consumable error message *and* remain within KVC.
 
 - Remove all the validation from the Core Data model editor in Xcode and perform all of the validation in the `validate<key>:error:` methods like `validateFirstName:error:`. If validation fails create a new `NSError` object with a consumable error message and return that to the view controller. Here's an example:
 
